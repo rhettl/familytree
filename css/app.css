@@ -1,0 +1,323 @@
+/* app css stylesheet */
+
+/** {outline: 1px solid red}*/
+
+body {
+    overflow: scroll;
+    white-space:nowrap;
+}
+.tree {
+    margin: 0 auto;
+}
+.tree ul {
+    padding-top: 20px;
+    padding-left: 0;
+    position: relative;
+}
+.tree>ul {
+    padding-top: 0;
+}
+.tree li{
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    vertical-align: top;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 2px solid #515151;
+    width: 55%; height: 20px;
+}
+
+.tree li::after {
+    right: auto; left: 50%;
+    border-left: 2px solid #515151;
+}
+
+.tree li:only-child::before, .tree li:only-child::after {
+    display: none;
+}
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+.tree li:only-child{
+    padding-top: 0;
+}
+
+.tree li:last-child::before{
+    border-right: 2px solid #515151;
+    border-radius: 0 7px 0 0;
+    -webkit-border-radius:0 7px 0 0;
+    -moz-border-radius:0 7PX 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-left: 2px solid #515151;
+    width: 0; height: 20px;
+}
+
+.tree li>div{
+    margin: 0 10px;
+    border: 2px solid #515151;
+    /*padding: 7px 12px;*/
+    text-decoration: none;
+    display: inline-block;
+
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li>div:hover, .tree li>div:hover+ul li>div{
+    background: #a9dba9;
+    color: #000;
+    border: 2px solid #000;
+}
+.tree li>div:hover+ul li::after,
+.tree li>div:hover+ul li::before,
+.tree li>div:hover+ul::before,
+.tree li>div:hover+ul ul::before{
+    border-color: #000;
+}
+
+
+
+
+
+
+.reverse-tree{
+    margin: 0 auto;
+}
+.reverse-tree ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.reverse-tree li{
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 0 5px 20px 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.reverse-tree li::before, .reverse-tree li::after {
+    content: '';
+    position: absolute; bottom: 0; right: 50%;
+    border-bottom: 2px solid #515151;
+    width: 50%; height: 20px;
+}
+
+.reverse-tree li::after {
+    right: auto; left: 50%;
+    border-left: 2px solid #515151;
+}
+
+.reverse-tree li:only-child::before, .reverse-tree li:only-child::after {
+    display: none;
+}
+.reverse-tree li:first-child::before, .reverse-tree li:last-child::after {
+    border: 0 none;
+}
+.reverse-tree li:only-child{
+    padding: 0;
+}
+
+.reverse-tree li:last-child::before{
+    border-right: 2px solid #515151;
+    border-radius: 0 0 7px 0;
+    -webkit-border-radius:0 0 7px 0;
+    -moz-border-radius:0 0 7px 0;
+}
+.reverse-tree li:first-child::after{
+    border-radius: 0 0 0 7px;
+}
+
+/*.reverse-tree ul li div {*/
+    /*margin-top: 20px;*/
+    /*position: relative;*/
+/*}*/
+/*.reverse-tree ul li div::after {*/
+    /*content: '';*/
+    /*border-left: 2px solid #515151;*/
+    /*position: absolute; left: 50%; top: -22px;*/
+    /*height: 20px; width: 0;*/
+/*}*/
+/*.reverse-tree ul li div:only-child {*/
+    /*margin-top: 0px;*/
+/*}*/
+/*.reverse-tree ul li div:only-child::after {*/
+    /*border-left: 0;*/
+/*}*/
+
+/*.tree2 ul ul::before {
+    content: '';
+    position: absolute; bottom: 0; right: 50%;
+    border-left: 2px solid #515151;
+    width: 0; height: 20px;
+}*/
+
+.reverse-tree ul ul {
+    margin-bottom: 20px;
+}
+.reverse-tree ul ul::before {
+    content: '';
+    border-left: 2px solid #515151;
+    position: absolute; left: 50%; bottom: -20px;
+    height: 20px; width: 0;
+}
+
+.reverse-tree li>div{
+    margin: 0 10px;
+    border: 2px solid #515151;
+    /*padding: 7px 12px;*/
+    text-decoration: none;
+    display: inline-block;
+
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*.reverse-tree::after{
+    content: '';
+    position: absolute; right: 50%;
+    height: 20px; width: 0;
+    border-right: 2px solid #515151;
+}*/
+
+.reverse-tree li>div:hover, .reverse-tree li>div:hover+ul li>div{
+    background: #a9dba9;
+    color: #000;
+    border: 2px solid #000;
+}
+.reverse-tree li>div:hover+ul li::after,
+.reverse-tree li>div:hover+ul li::before,
+.reverse-tree li>div:hover+ul::before,
+.reverse-tree li>div:hover+ul ul::before{
+    border-color: #000;
+}
+
+div.tree, div.reverse-tree{
+    display: inline-block;
+}
+
+div.self::after {
+    content: '';
+    position: absolute; top: -18px; right: 50%;
+    height: 20px;
+    border-left: 2px solid #515151;
+}
+
+.geno-container {
+    text-align: center;
+    margin: 0;
+    position: relative;
+}
+
+
+/*Clear the li in Person*/
+.person .info ul, .person .info ul li {
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    position: static;
+    text-align: left;
+}
+.person .info ul {
+    margin-left: 10px;
+}
+.person .info ul li {
+    margin-left: 20px;
+    display: list-item;
+    list-style-type: disc;
+}
+.person .info ul::before, .person .info ul li::before,
+.person .info ul::after, .person .info ul li::after {
+    content: '';
+    border: 0;
+    position: static;
+}
+
+
+.person {
+    height: 125px;
+    padding: 7px;
+}
+.person div {
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+.person div.info {
+    border: 0;
+    margin: 0;
+    min-width: 100px;
+}
+.person .info h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    position: relative;
+}
+.person .info span{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+.person .info span::before{
+    content: 'aka:';
+    position: absolute;
+    left:0;
+}
+.person div.image {
+    border: 1px solid #515151;
+    width: 100px; height: 100%;
+    margin: 0 7px 0 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: #515151;
+
+    border-radius: 7px;
+}
+.person .image img{
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+{
+    "1": {
+        "id": 1,
+        "name": {
+            "real": {
+                "title": null,
+                "first": "Rhett",
+                "middle": "N",
+                "last": "Lowe",
+                "family": ""
+            },
+            "alias": {
+                "title": "",
+                "first": "Latharn",
+                "middle": "",
+                "last": "MacCormac",
+                "family": "Dum Cormac"
+            }
+        },
+        "parents": [2, 3],
+        "children": [],
+        "relations": [],
+        "dates": {
+            "birth": 0,
+            "death": 0
+        },
+        "sex": "male"
+    },
+    "2": {
+        "id": 2,
+        "name": {
+            "real": {
+                "title": null,
+                "first": "Kurt",
+                "middle": "",
+                "last": "Cotter",
+                "family": ""
+            },
+            "alias": {
+                "title": "",
+                "first": "Kurt",
+                "middle": "",
+                "last": "MacCormac",
+                "family": "Dum Cormac"
+            }
+        },
+        "parents": [],
+        "children": [1, 4],
+        "relations": [
+            {
+                "type": "marriage",
+                "start": 0,
+                "other": 3,
+                "end": 0
+            }
+        ],
+        "dates": {
+            "birth": 0,
+            "death": 0
+        },
+        "sex": "male"
+    },
+    "3": {
+        "id": 3,
+        "name": {
+            "real": {
+                "title": null,
+                "first": "Don",
+                "middle": "",
+                "last": "Cotter",
+                "family": ""
+            },
+            "alias": {
+                "title": "",
+                "first": "Don",
+                "middle": "",
+                "last": "MacCormac",
+                "family": "Dum Cormac"
+            }
+        },
+        "parents": [],
+        "children": [1, 4],
+        "relations": [
+            {
+                "type": "marriage",
+                "start": 0,
+                "other": 2,
+                "end": 0
+            }
+        ],
+        "dates": {
+            "birth": 0,
+            "death": 0
+        },
+        "sex": "female"
+    },
+    "4": {
+        "id": 4,
+        "name": {
+            "real": {
+                "title": null,
+                "first": "Douglas",
+                "middle": "Emanual",
+                "last": "Grant",
+                "family": ""
+            },
+            "alias": {
+                "title": "",
+                "first": "Dougal",
+                "middle": "",
+                "last": "MacCormac",
+                "family": "Dum Cormac"
+            }
+        },
+        "parents": [2, 3],
+        "children": [],
+        "relations": [],
+        "dates": {
+            "birth": 0,
+            "death": 0
+        },
+        "sex": "male"
+    }
+}

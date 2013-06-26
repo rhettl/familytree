@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Family Tree</title>
+    <link rel="stylesheet" href="css/app.css" />
+
+</head>
+<body>
+
+<script type="text/ng-template"  id="person.html">
+    <div class="person">
+        <div class="image"><img src="{{ person.img }}" /></div>
+        <div class="info">
+            <h2>{{ person.name.alias.first + " " + person.name.alias.last }}</h2>
+            <span>{{ person.name.real.first + " " + person.name.real.last }}</span>
+            <ul>
+                <li ng-repeat="data in getData(person)">
+                    {{ data.title }}: {{ data.value }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+
+<div class="geno-container">
+    <div class="row">
+        <div class='reverse-tree'>
+            <ul>
+                <li>
+                    <ul>
+                        <li>
+                            <ul>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/1.jpg" /></div>
+                                        <div class="info"><h2>ggparent 1</h2></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/2.jpg" /></div>
+                                        <div class="info"><h2>ggparent 2</h2></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="person">
+                                <div class="image"><img src="img/3.jpg" /></div>
+                                <div class="info"><h2>gparent 1</h2></div>
+                            </div>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/4.jpg" /></div>
+                                        <div class="info"><h2>ggparent 3</h2></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/5.jpg" /></div>
+                                        <div class="info"><h2>ggparent 4</h2></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="person">
+                                <div class="image"><img src="img/6.jpg" /></div>
+                                <div class="info"><h2>gparent 2</h2></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="person">
+                        <div class="image"><img src="img/7.jpg" /></div>
+                        <div class="info"><h2>Parent 1</h2></div>
+                    </div>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <ul>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/8.jpg" /></div>
+                                        <div class="info"><h2>ggparent 5</h2></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/9.jpg" /></div>
+                                        <div class="info"><h2>ggparent 6</h2></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="person">
+                                <div class="image"><img src="img/10.jpg" /></div>
+                                <div class="info"><h2>gparent 3</h2></div>
+                            </div>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/11.jpg" /></div>
+                                        <div class="info"><h2>ggparent 7</h2></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="person">
+                                        <div class="image"><img src="img/12.jpg" /></div>
+                                        <div class="info"><h2>ggparent 8</h2></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="person">
+                                <div class="image"><img src="img/13.jpg" /></div>
+                                <div class="info"><h2>gparent 4</h2></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="person">
+                        <div class="image"><img src="img/14.jpg" /></div>
+                        <div class="info"><h2>Parent 2</h2></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='tree'>
+        <ul>
+            <li>
+                <div class="self person">
+                    <div class="image"><img src="img/15.jpg" /></div>
+                    <div class="info"><h2>Kurt Cottersdasdasdasd</h2></div>
+                </div>
+                <ul>
+                    <li>
+                        <div class="person">
+                            <div class="image"><img src="img/16.jpg" /></div>
+                            <div class="info">
+                                <h2>Latharn MacCormac</h2>
+                                <span>Rhett Lowe</span>
+                                <ul>
+                                    <li>Born: 12/02/1987</li>
+                                    <li>Age: 25</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/17.jpg" /></div>
+                                    <div class="info"><h2>Gchild1</h2></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/18.jpg" /></div>
+                                    <div class="info"><h2>Gchild2</h2></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/19.jpg" /></div>
+                                    <div class="info"><h2>Gchild3</h2></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="person">
+                            <div class="image"><img src="img/20.jpg" /></div>
+                            <div class="info"><h2>Dougal MacCormac</h2></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/21.jpg" /></div>
+                                    <div class="info"><h2>Gchild4</h2></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/22.jpg" /></div>
+                                    <div class="info"><h2>Gchild5</h2></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/23.jpg" /></div>
+                                    <div class="info"><h2>Gchild6</h2></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="person">
+                            <div class="image"><img src="img/24.jpg" /></div>
+                            <div class="info"><h2>Leela MacCormac</h2></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="person">
+                            <div class="image"><img src="img/25.jpg" /></div>
+                            <div class="info"><h2>Jessi MacCormac</h2></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/26.jpg" /></div>
+                                    <div class="info"><h2>Gchild7</h2></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="person">
+                            <div class="image"><img src="img/27.jpg" /></div>
+                            <div class="info"><h2>Cassandra MacCormac</h2></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="person">
+                                    <div class="image"><img src="img/28.jpg" /></div>
+                                    <div class="info"><h2>Gchild8</h2></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+-->
+
+<script src="lib/jquery-2.0.2.min.js"></script>
+<!--<script src="lib/angular/angular.js"></script>-->
+<!--<script src="lib/angular/angular-resource.js"></script>-->
+<!--<script src="js/app.js"></script>-->
+<!--<script src="js/services.js"></script>-->
+<!--<script src="js/controllers.js"></script>-->
+<!--<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>-->
+<!--<script src="lib/bootstrap/js/bootstrap.js"></script>-->
+<script>
+    $('.geno-container').on('click', 'div', function (){
+        $(this).toggleClass('no-parents').siblings('ul').fadeToggle();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<h1>People</h1>
+<ul class="">
+    <li ng-repeat="person in people">
+        {{ person.name.real.first + " " + person.name.real.last }}
+        <ul>
+            <li>
+                A.K.A: {{person.name.alias.first + " " + person.name.alias.last }} of Household {{ person.name.alias.family }}
+            </li>
+            <li>
+                <a ng-href="{{'#/details/'+person.id}}">More Details</a>
+            </li>
+        </ul>
+    </li>
+</ul>
