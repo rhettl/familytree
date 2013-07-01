@@ -6,23 +6,53 @@
     <link rel="stylesheet" href="css/app.css" />
 
 </head>
-<body>
+<body ng-app ng-controller="DisplayTree">
 
 <script type="text/ng-template"  id="person.html">
     <div class="person">
-        <div class="image"><img src="{{ person.img }}" /></div>
+        <div class="image"><img ng-src="{{ person.images[0] }}" /></div>
         <div class="info">
             <h2>{{ person.name.alias.first + " " + person.name.alias.last }}</h2>
             <span>{{ person.name.real.first + " " + person.name.real.last }}</span>
-            <ul>
-                <li ng-repeat="data in getData(person)">
-                    {{ data.title }}: {{ data.value }}
-                </li>
-            </ul>
+            <!--<ul>-->
+                <!--<li ng-repeat="data in getData(person)">-->
+                    <!--{{ data.title }}: {{ data.value }}-->
+                <!--</li>-->
+            <!--</ul>-->
         </div>
     </div>
 </script>
+<script type="text/ng-template"  id="children.html">
+    <div ng-include="'person.html'"></div>
+    <ul>
+        <li ng-repeat="person in childrenOf(person.id)" ng-include="person.offspring.length > 0 && 'children.html' || 'person.html'"></li>
+    </ul>
+</script>
+<script type="text/ng-template"  id="parents.html">
+    <ul>
+        <li ng-repeat="person in parentsOf(person.id)" ng-include="person.parents.length > 0 && 'parents.html' || 'person.html'"></li>
+    </ul>
+    <div ng-include="'person.html'"></div>
+</script>
 
+
+<input ng-model="personID" >
+<div class='geno-container'>\
+    <ul>
+        <li class="reverse-tree">
+            <ul>
+                <li ng-repeat="person in parentsOf(personID || 3)" ng-include="person.parents.length > 0 && 'parents.html' || 'person.html'"></li>
+            </ul>
+        </li>
+        <li class="tree">
+            <ul>
+                <li ng-repeat="person in getPerson(personID || 3)" ng-include="person.offspring.length > 0 && 'children.html' || 'person.html'"></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!--
 <div class="geno-container">
     <div class="row">
         <div class='reverse-tree'>
@@ -233,17 +263,19 @@
         </ul>
     </div>
 </div>
+-->
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 -->
 
 <script src="lib/jquery-2.0.2.min.js"></script>
-<!--<script src="lib/angular/angular.js"></script>-->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/bootstrap/ui-bootstrap-tpls-0.4.0.min.js"></script>
 <!--<script src="lib/angular/angular-resource.js"></script>-->
 <!--<script src="js/app.js"></script>-->
 <!--<script src="js/services.js"></script>-->
-<!--<script src="js/controllers.js"></script>-->
+<script src="js/controllers.js"></script>
 <!--<script src="js/filters.js"></script>
 <script src="js/directives.js"></script>-->
 <!--<script src="lib/bootstrap/js/bootstrap.js"></script>-->

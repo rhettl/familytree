@@ -68,6 +68,9 @@ body {
     border-left: 2px solid #515151;
     width: 0; height: 20px;
 }
+.tree ul ul:empty::before {
+    border-left: 0;
+}
 
 .tree li>div{
     margin: 0 10px;
@@ -223,8 +226,26 @@ body {
     border-color: #000;
 }
 
-div.tree, div.reverse-tree{
-    display: inline-block;
+li.tree, li.reverse-tree{
+    list-style-type: none;
+}
+.reverse-tree+li.tree>ul>li>div{
+    position: relative;
+    margin-top: 20px;
+}
+.reverse-tree+li.tree>ul>li>div::after{
+    content: '';
+    position: absolute; top: -22px; right: 50%;
+    height: 20px;
+    border-left: 2px solid #515151;
+}
+
+.geno-container>ul{
+    position: relative;
+}
+.geno-container>ul>li{
+    text-align: center;
+    width: 100%;
 }
 
 div.self::after {

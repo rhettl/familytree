@@ -1,0 +1,4 @@
+<div ng-include="'partials/person.html'"></div>
+<ul>
+    <li ng-repeat="person in childrenOf(person.id)" ng-include="'partials/parents.html'"></li>
+</ul>
